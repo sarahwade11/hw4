@@ -3,11 +3,11 @@ class PlacesController < ApplicationController
   def index
    # @places = Place.where({ "user_id" => session["user_id"] })
     @places = Place.all
-    @places = Place.new
+    @places_new = Place.new
   end
 
   def show
-    @places = Place.find_by({ "id" => params["id"] })
+    @place = Place.find_by({ "id" => params["id"] })
     @posts = Post.where({ "place_id" => @place["id"] })
   end
 
