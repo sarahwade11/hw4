@@ -18,8 +18,8 @@ class PostsController < ApplicationController
       redirect_to "/places/#{@post["place_id"]}"
     else 
       flash["notice"] = "Login first."
+      redirect_to "/login"
     end
-    redirect_to "/posts"
   end
-
+  
 end
