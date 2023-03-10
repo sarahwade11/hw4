@@ -4,8 +4,9 @@
 <p>
   <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-success">New Post</a>
 </p>
-<div class = "col-md-6 col-lg-3">
+
 <% for post in @posts %>
+<div class ="col-md-6 col-lg-3">
   <h3><%= post["title"] %></h3>
   <h4><%= post["posted_on"] %></h4>
   <p><%= post["description"] %></p>
@@ -16,8 +17,10 @@
         <% end %>
   </div>
 <% end %>
+ 
 
-
+</div>
 <p>
   <a href="/places">Back to All Places</a>
 </p>
+ 

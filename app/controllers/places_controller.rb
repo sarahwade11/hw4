@@ -8,7 +8,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find_by({ "id" => params["id"] })
-    @posts = Post.where({ "place_id" => @place["id"] })
+    @posts = Post.where({ "place_id" => @place["id"],"user_id" => @current_user["id"]})
   end
 
   def new
@@ -19,7 +19,7 @@ class PlacesController < ApplicationController
     if @current_user
       @places = Place.new
       @places["name"] = params["place"]["name"]
-      @places["user_id"] = @current_user["id"]
+      #@places["user_id"] = @current_user["id"]
       @places.save
     end
  
